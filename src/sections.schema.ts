@@ -182,10 +182,26 @@ export const bannerAgencySectionSchema = z
       .optional(),
   })
   .optional();
+// Office Locations Section Schema
+export const officeLocationsSectionSchema = z.object({
+  enable: z.boolean().optional().default(true),
+  title: z.string().optional(),
+  list: z.array(z.object({
+    enable: z.boolean().optional().default(true),
+    name: z.string(),
+    description: z.string().optional(),
+    contact: z.object({
+      phone: z.string(),
+      email: z.string(),
+    }),
+    details: z.array(z.string()),
+  })).optional().default([])
+}).optional();
 
 export const sectionsSchema = {
   servicesSection: servicesSectionSchema,
   clientsSection: clientsSectionSchema,
   bannerAgencySection: bannerAgencySectionSchema,
   pricingSection: pricingSectionSchema,
+  officeLocationsSection: officeLocationsSectionSchema
 };

@@ -41,40 +41,6 @@ if (Astro.props.height) {
 ---
 
 <a
-  href={getLocaleUrlCTM("/", Astro.currentLocale)}
-  class:list={["logo-wrapper", className]}>
-  {
-    src || logoAlternate || logo ? (
-      <>
-        <OptimizedImage
-          src={src ? src : logo}
-          class="logo"
-          alt={toSentenceCase("Brand logo of " + title)}
-          style={{
-            height: logoHeight,
-            width: logoWidth,
-          }}
-        />
-        {logoAlternate && (
-          <OptimizedImage
-            src={logoAlternate}
-            class="logo-alternate"
-            alt={toSentenceCase("Brand logo of " + title)}
-            style={{
-              height: logoHeight,
-              width: logoWidth,
-            }}
-          />
-        )}
-
-        {logoText && (
-          <span class="logo-text" set:html={markdownify(logoText)} />
-        )}
-      </>
-    ) : logoText ? (
-      logoText
-    ) : (
-      title
-    )
-  }
+  href={getLocaleUrlCTM("/", Astro.currentLocale)}>
+  <h2 class="text-white">FSS</h2>
 </a>

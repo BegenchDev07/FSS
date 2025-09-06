@@ -25,24 +25,6 @@ const languages = supportedLanguages.map((lang) => {
     "language-switcher hs-dropdown relative [--auto-close:inside] [--gpu-acceleration:false] [--strategy:absolute]",
     Astro.props.appearance === "light" && "language-switcher-light",
   ]}>
-  <button
-    type="button"
-    id="language-switcher-dropdown-toggle"
-    class="language-switcher-button hs-dropdown-toggle"
-    aria-expanded="false"
-    aria-label="Menu">
-    <OptimizedImage
-      inlineSvg={true}
-      src="/images/icons/svg/multilingual.svg"
-      alt="icon"
-      class="w-4"
-    />
-    <span class="text uppercase">{currentLocale}</span>
-    <ReactIcon
-      icon="IoIosArrowDown"
-      class="hs-dropdown-open:rotate-180 w-3.5 transition-transform duration-300"
-    />
-  </button>
   <ul
     class="language-switcher-dropdown hs-dropdown-menu hs-dropdown-open:mt-0 hs-dropdown-open:opacity-100 hs-dropdown-open:visible top-0 z-10 mt-2 hidden w-24 min-w-32 opacity-0 [--placement:right-start]"
     aria-labelledby="language-switcher-dropdown-toggle">

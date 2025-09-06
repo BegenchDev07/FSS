@@ -1,10 +1,10 @@
 # Site Configuration
 [site]
-  title            = "Folex" # Shared title for SEO and OpenGraph
-  description      = "A highly customizable creative agency business theme built with Tailwind CSS and Astro Js" # Shared description for SEO and OpenGraph
-  tagline          = "Creative Agency & Personal Portfolio Business Theme"
-  taglineSeparator = "" # default is " - " 
-  baseUrl          = "https://folex-lite-astro.vercel.app/" # Base URL for the site and used in OpenGraph meta tags.
+  title            = "FlameSystemService" # Shared title for SEO and OpenGraph
+  description      = "Flame System Services delivers advanced fire detection, prevention, and response solutions to safeguard what matters most." # Shared description for SEO and OpenGraph
+  tagline          = "Advanced fire detection, prevention, and response solutions"
+  taglineSeparator = "" # default is " - "
+  baseUrl          = "" # Base URL for the site and used in OpenGraph meta tags.
   logo             = "/images/logo.svg" # Path to the site's logo
   logoAlternate    = "/images/logo-light.svg" # Path to the site's alternate logo
   logoText         = "" # Text displayed next to the logo
@@ -25,7 +25,7 @@
 # Specific SEO configurations that complement the general site settings.
 # -----------------------------------------------------------------------------------------------------------------------------------
 [seo]
-  author = "Getastrothemes"
+  author = ""
   keywords = [
     "free digital agency",
     "free astro template",
@@ -63,7 +63,7 @@
   # Contact form settings
   # Available providers: "formspree", "formsubmit.co", "netlify"
   # Available actions: "https://formspree.io/f/form_id", "https://formsubmit.co/your_email@example.com", "/"
-  contactFormAction   = "https://formsubmit.co/your_email@example.com"
+  contactFormAction   = "https://formsubmit.co/oglanbet095@gmail.com"
   contactFormProvider = "formsubmit.co"
 
   footerDescription = "" # Check src/i18n/en.json and src/i18n/fr.json for changing the footer description in different languages or directly add value here if you are not using internationalization feature
