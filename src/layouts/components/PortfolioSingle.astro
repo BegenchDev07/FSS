@@ -15,10 +15,10 @@ let {
   id: string;
   collection: string;
   data: {
-    title: string;
-    images: string[];
-    categories: string[];
-    information: { label: string; value: string }[];
+    title?: string;
+    images?: string[];
+    categories?: string[];
+    information?: { label?: string; value?: string }[];
   };
 } = Astro.props.content;
 
@@ -65,7 +65,7 @@ if (Array.isArray(information)) {
                 <div class="swiper-slide h-auto!">
                   <OptimizedImage
                     src={item}
-                    alt={`${title} image ${index + 1}`}
+                    alt={`${title || "Portfolio"} image ${index + 1}`}
                     class="h-112.5 w-full object-cover md:h-137.5"
                   />
                 </div>
@@ -98,12 +98,12 @@ if (Array.isArray(information)) {
                   {item.label && (
                     <span
                       class="text-dark/80 font-medium"
-                      set:html={item.label}
+                      set:html={item.label || ""}
                     />
                   )}
                   <div
                     class="prose-a:underline text-dark font-secondary font-medium capitalize"
-                    set:html={markdownify(item.value, true)}
+                    set:html={item.value ? markdownify(item.value, true) : ""}
                   />
                 </li>
               ))}
@@ -111,7 +111,7 @@ if (Array.isArray(information)) {
           )
         }
         <div class="space-y-10 pe-10 xl:col-span-5">
-          {title && <h1 class="md:text-display-5" set:html={title} />}
+          {title && <h1 class="md:text-display-5" set:html={title || ""} />}
 
           {
             Content && (

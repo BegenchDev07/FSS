@@ -61,13 +61,26 @@ export const titleify = (content: string) => {
 };
 
 // plainify
-export const plainify = (content: string) => {
-  const parseMarkdown: any = marked.parse(content);
-  const filterBrackets = parseMarkdown.replace(/<\/?[^>]+(>|$)/gm, "");
+export const plainify = (content?: string) => {
+  if (!content || typeof content !== "string") {
+    return ""; // bypass null/undefined safely
+  }
+
+  let parsed = "";
+  try {
+    parsed = marked.parse(content) as string;
+  } catch (e) {
+    console.warn("plainify: failed to parse content", e);
+    return content; // fallback raw
+  }
+
+  const filterBrackets = parsed.replace(/<\/?[^>]+(>|$)/gm, "");
   const filterSpaces = filterBrackets.replace(/[\r\n]\s*[\r\n]/gm, "");
   const stripHTML = htmlEntityDecoder(filterSpaces);
+
   return stripHTML;
 };
+
 
 // strip entities for plainify
 const htmlEntityDecoder = (htmlWithEntities: string) => {

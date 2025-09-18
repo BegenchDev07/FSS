@@ -7,7 +7,7 @@ image: ""
 
 # title & description: These act as the page's primary title and description, affecting the title bar and SEO.
 title: ""
-description: ""
+# description: ""
 
 # Content Date
 date: 2020-02-05
